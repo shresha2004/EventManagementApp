@@ -89,7 +89,7 @@ function Navbar() {
                 </BootstrapNavbar.Collapse>
             </div>
 
-            {/* Login Modal */}
+            
             <Modal show={showLogin} onHide={handleLoginClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Login</Modal.Title>
@@ -109,7 +109,7 @@ function Navbar() {
                 </Modal.Body>
             </Modal>
 
-            {/* Register Modal */}
+            
             <Modal show={showRegister} onHide={handleRegisterClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Register</Modal.Title>
