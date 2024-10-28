@@ -19,7 +19,6 @@ app.use(helmet.contentSecurityPolicy({
     frameSrc: ["'self'", "https://vercel.live"],
   },
 }));
-
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 mongoose.connect(process.env.MONGODB_URI)
@@ -27,7 +26,7 @@ mongoose.connect(process.env.MONGODB_URI)
     .catch(err => console.error('MongoDB connection error:', err));
 
 app.set('view engine', 'ejs');
-app.set('views', './views'); 
+app.set('views', path.join(__dirname, 'views')); 
 
 app.use('/api/events', eventRoutes);
 app.use('/api/auth', authRoutes);
