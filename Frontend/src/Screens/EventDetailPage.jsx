@@ -20,7 +20,7 @@ const EventDetailPage = () => {
     useEffect(() => {
         const fetchEvent = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/api/events/${id}`);
+                const response = await fetch(`https://eventmanagementapp-duq1.onrender.com/api/events/${id}`);
                 const data = await response.json();
                 setEvent(data);
                 setFormData({
@@ -40,7 +40,7 @@ const EventDetailPage = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch(`http://localhost:5000/api/events/${id}`, {
+            const response = await fetch(`https://eventmanagementapp-duq1.onrender.com/api/events/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -64,7 +64,7 @@ const EventDetailPage = () => {
     const handleDelete = async () => {
         if (window.confirm("Are you sure you want to delete this event?")) {
             try {
-                const response = await fetch(`http://localhost:5000/api/events/${id}`, {
+                const response = await fetch(`https://eventmanagementapp-duq1.onrender.com/api/events/${id}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json'

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const api = axios.create({ baseURL: 'http://localhost:5000/api' });
+const api = axios.create({ baseURL: 'https://eventmanagementapp-duq1.onrender.com/api' });
 
 export const getEvents = () => api.get('/events');
 export const getEvent = (id) => api.get(`/events/${id}`);

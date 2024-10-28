@@ -12,7 +12,7 @@ const EventsPage = () => {
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/events', { method: 'GET' });
+                const response = await fetch('https://eventmanagementapp-duq1.onrender.com/api/events', { method: 'GET' });
                 const data = await response.json();
                 setEvents(data);
             } catch (error) {
