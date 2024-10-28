@@ -31,4 +31,10 @@ app.get('/', (req, res) => {
     res.render('index', { title: 'GDSC Event Handling Page' });
 });
 
-app.listen(5000, () => console.log('Server running on port 5000'));
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
